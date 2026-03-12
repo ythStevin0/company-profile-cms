@@ -2,6 +2,7 @@ import Services from "../components/Services";
 import Portfolio from "../components/Portfolio";
 import About from "../components/About";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const Home = () => {
   // Organic blob border radius configs for animation
@@ -142,6 +143,7 @@ const Home = () => {
       <Portfolio />
       <About />
       <Contact />
+      <Footer />      
 
       {/* Embedded style for morphing blobs */}
       <style dangerouslySetInnerHTML={{__html: `
