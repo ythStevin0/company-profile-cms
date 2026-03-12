@@ -14,8 +14,8 @@ const Navbar = () => {
 
   const navLinks = [
   { name: "Cari Kebutuhan", href: "#services" },
-  { name: "Pertanyaan", href: "#faq" },
-  { name: "Blog", href: "#blog" },
+  { name: "Portfolio", href: "#portfolio" },
+  { name: "Tentang Kami", href: "#about" },
   { name: "Contact", href: "#contact" },
 ];
 
