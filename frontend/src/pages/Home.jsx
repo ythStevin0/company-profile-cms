@@ -1,3 +1,5 @@
+import Services from "../components/Services";
+
 const Home = () => {
   // Organic blob border radius configs for animation
   const blob1Shape = "40% 60% 70% 30% / 40% 50% 60% 50%";
@@ -22,7 +24,7 @@ const Home = () => {
       ></div>
 
       {/* --- 2. HERO CONTENT --- */}
-      <main className="pt-32 pb-20 px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10 min-h-screen h-full">
+      <main id="home" className="pt-32 pb-20 px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10 min-h-screen h-full">
 
         {/* --- LEFT: REDESIGNED PREMIUM TYPOGRAPHY --- */}
         <div className="flex flex-col justify-center w-full max-w-xl z-20">
@@ -133,6 +135,8 @@ const Home = () => {
 
       </main>
 
+      <Services />
+
       {/* Embedded style for morphing blobs */}
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes morph {
@@ -147,4 +151,5 @@ const Home = () => {
 };
 
 export default Home;
+
 
