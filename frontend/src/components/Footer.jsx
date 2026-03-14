@@ -30,9 +30,9 @@ const Footer = () => {
             className="flex items-center gap-3 mb-6 group w-fit"
           >
             <div className="w-8 h-8 rounded-sm bg-transparent border border-[#0077FF]/50 flex items-center justify-center transition-shadow duration-300 group-hover:shadow-[0_0_15px_rgba(0,119,255,0.8)]">
-              <span className="text-[#0077FF] font-bold text-lg drop-shadow-[0_0_8px_rgba(0,119,255,0.8)]">L</span>
+              <span className="text-[#0077FF] font-bold text-lg drop-shadow-[0_0_8px_rgba(0,119,255,0.8)]">N</span>
             </div>
-            <span className="font-medium text-lg text-white tracking-wider">LuminariStudio</span>
+            <span className="font-medium text-lg text-white tracking-wider">NexoraTech</span>
           </a>
           <p className="text-gray-500 text-sm leading-relaxed max-w-sm mb-8">
             Mitra teknologi terpercaya untuk bisnis Anda. Kami membangun solusi digital yang membawa bisnis Anda ke level berikutnya.
@@ -74,8 +74,8 @@ const Footer = () => {
         <div>
           <h4 className="font-mono text-[9px] text-gray-600 tracking-widest uppercase mb-6">Kontak</h4>
           <div className="flex flex-col gap-3">
-            <a href="mailto:hello@luminaristudio.id" className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
-              hello@luminaristudio.id
+            <a href="mailto:hello@nexoratech.id" className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
+              hello@nexoratech.id
             </a>
             <a href="tel:+6281234567890" className="text-sm text-gray-500 hover:text-white transition-colors duration-200">
               +62 812 3456 7890
