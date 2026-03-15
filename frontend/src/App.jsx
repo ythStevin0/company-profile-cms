@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const PageWrapper = ({ children }) => (
   <div className="min-h-screen bg-[#0B0C10] text-white font-sans relative overflow-hidden">
@@ -18,13 +21,17 @@ const Contact  = () => <PageWrapper><div className="flex items-center justify-ce
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/"         element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/faq"      element={<FAQ />} />
-        <Route path="/blog"     element={<Blog />} />
-        <Route path="/contact"  element={<Contact />} />
+        {/* Private/Admin Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+
+        {/* Public Routes with Navbar */}
+        <Route path="/" element={<><Navbar /><Home /></>} />
+        <Route path="/services" element={<><Navbar /><Services /></>} />
+        <Route path="/faq" element={<><Navbar /><FAQ /></>} />
+        <Route path="/blog" element={<><Navbar /><Blog /></>} />
+        <Route path="/contact" element={<><Navbar /><Contact /></>} />
       </Routes>
     </BrowserRouter>
   );
