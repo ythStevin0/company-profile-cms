@@ -14,14 +14,21 @@ const app = express();
 
 connectDB();
 
-app.use(cors(
-    {
-        origin: [
+app.use(cors({
+    origin: (origin, callback) => {
+        const allowedOrigins = [
             "http://localhost:5173",
-    "https://company-profile-cms-gamma.vercel.app"
-        ]
-    }
-));
+            "https://company-profile-cms-gamma.vercel.app"
+        ];
+        // Izinkan jika tidak ada origin (seperti mobile apps/Postman) atau origin ada di list atau dari vercel.app
+        if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true
+}));
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/services', serviceRoutes);
