@@ -14,12 +14,19 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: [
+            "http://localhost:5173",
+    "https://company-profile-cms-gamma.vercel.app"
+        ]
+    }
+));
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/portfolio', portfolioRoutes);
-app.use('/api/messages', protect, messageRoutes);  
+app.use('/api/messages', messageRoutes);  
 
 app.get("/", (req, res) => {
     res.send("Company Profile API is running");
