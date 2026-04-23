@@ -1,8 +1,9 @@
 import Admin from './auth.model.js';
 import jwt from 'jsonwebtoken';
+import { env } from '../../config/env.js';
 
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+  return jwt.sign({ id }, env.JWT_SECRET, { expiresIn: '7d' });
 };
 
 export const loginAdmin = async (email, password) => {

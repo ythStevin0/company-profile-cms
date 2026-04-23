@@ -1,15 +1,16 @@
-import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-
-dotenv.config();
+import { env } from './env.js';
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        await mongoose.connect(env.MONGO_URI);
         console.log('MongoDB connected');
     } catch (error) {
-        console.error(error);
-        process.exit(1);
+        if (error?.code === 8000 || /authentication failed/i.test(error?.message || '')) {
+            throw new Error('MongoDB authentication failed. Update MONGO_URI in backend/.env with a valid connection string.');
+        }
+
+        throw new Error(`MongoDB connection failed: ${error.message}`);
     }
 };
 
